@@ -1,2 +1,5 @@
 import/
+app_packages/
 *.xcuserstate
+
+*.pyc
