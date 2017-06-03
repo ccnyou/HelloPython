@@ -1,7 +1,4 @@
 import/framework/
-app_packages/
 *.xcuserstate
-
 *.pyc
-
 *.a
