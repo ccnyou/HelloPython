@@ -1,4 +1,5 @@
 import/framework/
+import/lib/
 *.xcuserstate
 *.pyc
 *.a
