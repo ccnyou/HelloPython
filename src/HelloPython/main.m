@@ -5,22 +5,24 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#include "Python.h"
-#include <dlfcn.h>
+#import "AppDelegate.h"
+// #include "Python.h"
+// #include <dlfcn.h>
 
-int main(int argc, char *argv[]) {
+/*
+int main_0(int argc, char *argv[]) {
     int ret = 0;
     unsigned int i;
     NSString *tmp_path;
     NSString *python_home;
     NSString *python_path;
     wchar_t *wpython_home;
-    const char* main_script;
-    wchar_t** python_argv;
+    const char *main_script;
+    wchar_t **python_argv;
 
     @autoreleasepool {
 
-        NSString * resourcePath = [[NSBundle mainBundle] resourcePath];
+        NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
 
         // Special environment to prefer .pyo; also, don't write bytecode
         // because the process will not have write permissions on the device.
@@ -36,19 +38,18 @@ int main(int argc, char *argv[]) {
         // Set the PYTHONPATH
         python_path = [NSString stringWithFormat:@"PYTHONPATH=%@/app:%@/app_packages", resourcePath, resourcePath, nil];
         NSLog(@"PYTHONPATH is: %@", python_path);
-        putenv((char *)[python_path UTF8String]);
+        putenv((char *) [python_path UTF8String]);
 
         // iOS provides a specific directory for temp files.
         tmp_path = [NSString stringWithFormat:@"TMP=%@/tmp", resourcePath, nil];
-        putenv((char *)[tmp_path UTF8String]);
+        putenv((char *) [tmp_path UTF8String]);
 
         NSLog(@"Initializing Python runtime");
         Py_Initialize();
 
         // Set the name of the main script
-        main_script = [
-            [[NSBundle mainBundle] pathForResource:@"app/main"
-                                            ofType:@"py"] cStringUsingEncoding:NSUTF8StringEncoding];
+        main_script = [[[NSBundle mainBundle] pathForResource:@"app/main"
+                                                       ofType:@"py"] cStringUsingEncoding:NSUTF8StringEncoding];
 
         if (main_script == NULL) {
             NSLog(@"Unable to locate HelloPython main module file");
@@ -56,7 +57,7 @@ int main(int argc, char *argv[]) {
         }
 
         // Construct argv for the interpreter
-        python_argv = PyMem_RawMalloc(sizeof(wchar_t*) * argc);
+        python_argv = PyMem_RawMalloc(sizeof(wchar_t *) * argc);
 
         python_argv[0] = Py_DecodeLocale(main_script, NULL);
         for (i = 1; i < argc; i++) {
@@ -72,7 +73,7 @@ int main(int argc, char *argv[]) {
         NSLog(@"Running %s", main_script);
 
         @try {
-            FILE* fd = fopen(main_script, "r");
+            FILE *fd = fopen(main_script, "r");
             if (fd == NULL) {
                 ret = 1;
                 NSLog(@"Unable to open main.py, abort.");
@@ -115,5 +116,13 @@ int main(int argc, char *argv[]) {
     }
 
     exit(ret);
+    return ret;
+}
+*/
+int main(int argc, char *argv[]) {
+    int ret = 0;
+    @autoreleasepool {
+        ret = UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+    }
     return ret;
 }
