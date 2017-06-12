@@ -348,16 +348,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = W85HQ8L7J9;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"../import/**",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "../src/HelloPython/HelloPython-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"../import/**",
-				);
 				INFOPLIST_FILE = "../src/HelloPython/HelloPython-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.python;
@@ -375,16 +367,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"../import/**",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "../src/HelloPython/HelloPython-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"../import/**",
-				);
 				INFOPLIST_FILE = "../src/HelloPython/HelloPython-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.python;
