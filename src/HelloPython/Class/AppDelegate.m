@@ -8,12 +8,18 @@
 
 #import "AppDelegate.h"
 #import <PythoniOS/PythoniOS.h>
+#import "Ultils.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //if (!IsDebuggerAttached()) {
+    //    ReopenStdout();
+    //}
+
     PythonEnvironment *env = [PythonEnvironment env];
     [env initialize];
+
     return YES;
 }
 

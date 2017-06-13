@@ -37,20 +37,20 @@
 
     // Set the home for the Python interpreter
     python_home = [NSString stringWithFormat:@"%@/Library/Python.framework/Resources", resourcePath];
-    NSLog(@"PythonHome is: %@", python_home);
+    //NSLog(@"PythonHome is: %@", python_home);
     _python_home = Py_DecodeLocale([python_home UTF8String], NULL);
     Py_SetPythonHome(_python_home);
 
     // Set the PYTHONPATH
     python_path = [NSString stringWithFormat:@"PYTHONPATH=%@/app:%@/app_packages", resourcePath, resourcePath];
-    NSLog(@"PYTHONPATH is: %@", python_path);
+    //NSLog(@"PYTHONPATH is: %@", python_path);
     putenv((char *)[python_path UTF8String]);
 
     // iOS provides a specific directory for temp files.
     tmp_path = [NSString stringWithFormat:@"TMP=%@/tmp", resourcePath];
     putenv((char *)[tmp_path UTF8String]);
 
-    NSLog(@"Initializing Python runtime");
+    //NSLog(@"Initializing Python runtime");
     Py_Initialize();
 
     // If other modules are using threads, we need to initialize them.
@@ -65,18 +65,20 @@
 }
 
 - (int)executePythonScript:(NSString *)script {
-    return 0;
+    int ret = PyRun_SimpleString([script UTF8String]);
+    return ret;
 }
 
 - (int)executePythonFile:(NSString *)filePath {
     int ret = -1;
-    const char *main_script = [filePath UTF8String];
-    FILE *fd = fopen(main_script, "r");
+    const char *szFilePath = [filePath UTF8String];
+    FILE *fd = fopen(szFilePath, "r");
     if (fd) {
-        ret = PyRun_SimpleFileEx(fd, main_script, 1);
+        ret = PyRun_SimpleFileEx(fd, szFilePath, 1);
         if (ret != 0) {
             NSLog(@"Application quit abnormally!");
         }
+        fclose(fd);
     }
     return ret;
 }

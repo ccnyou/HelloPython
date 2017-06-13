@@ -10,7 +10,8 @@
 #import <PythoniOS/PythoniOS.h>
 
 @interface ViewController ()
-
+@property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (nonatomic, strong) PythonEnvironment *env;
 @end
 
 @implementation ViewController
@@ -18,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.env = [PythonEnvironment env];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -25,11 +27,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)executePython:(id)sender {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"app/hello"
-                                    ofType:@"py"];
-    PythonEnvironment *env = [PythonEnvironment env];
-    [env executePythonFile:path];
+- (IBAction)onSaveTouched:(id)sender {
+}
+
+- (IBAction)onExecuteTouched:(id)sender {
+    [self.env executePythonScript:self.textView.text];
 }
 
 @end

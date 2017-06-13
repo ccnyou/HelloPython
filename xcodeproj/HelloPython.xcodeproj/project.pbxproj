@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C4E05F22ACEA0FB00008DBF /* Ultils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4E0A5CE8241E6D2AE122AD /* Ultils.m */; };
+		5C4E060EF0BB2F4A9B6368FB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4E07A35EE8144807FB0176 /* AppDelegate.m */; };
+		5C4E087E49F6943F1F579CCA /* ConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4E068B6B18FC0A3BB95314 /* ConsoleViewController.m */; };
+		5C4E091D0FDEE69A1055A497 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4E06E93788EB5703648767 /* ViewController.m */; };
 		6023B23D1C27D20F006F2562 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6023B23C1C27D20F006F2562 /* libsqlite3.tbd */; };
 		6023B23F1C27D218006F2562 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6023B23E1C27D218006F2562 /* libz.tbd */; };
 		60796EE619190F4100A9926B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60796EE519190F4100A9926B /* Foundation.framework */; };
@@ -21,8 +25,6 @@
 		A6FDDE8F1EE10B3E00DF515B /* app in Resources */ = {isa = PBXBuildFile; fileRef = A6FDDE8D1EE10B3E00DF515B /* app */; };
 		A6FDDE901EE10B3F00DF515B /* app_packages in Resources */ = {isa = PBXBuildFile; fileRef = A6FDDE8E1EE10B3E00DF515B /* app_packages */; };
 		B2053EEF1EEEE6C9003C56F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2053EEE1EEEE6C9003C56F5 /* Main.storyboard */; };
-		B2053EF21EEEE6F1003C56F5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2053EF11EEEE6F1003C56F5 /* ViewController.m */; };
-		B2053EF51EEEE78D003C56F5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2053EF41EEEE78D003C56F5 /* AppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +42,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5C4E01AA578191E2D69F5587 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		5C4E046E8D28E0CB4A93FBA0 /* ConsoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsoleViewController.h; sourceTree = "<group>"; };
+		5C4E05E367E74EE3D49C3478 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5C4E068B6B18FC0A3BB95314 /* ConsoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsoleViewController.m; sourceTree = "<group>"; };
+		5C4E06E93788EB5703648767 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5C4E07A35EE8144807FB0176 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5C4E085F091DACFCF3B36AE7 /* Ultils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ultils.h; sourceTree = "<group>"; };
+		5C4E0A5CE8241E6D2AE122AD /* Ultils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ultils.m; sourceTree = "<group>"; };
 		6023B23C1C27D20F006F2562 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		6023B23E1C27D218006F2562 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		60796EE219190F4100A9926B /* HelloPython.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloPython.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,10 +66,6 @@
 		A6FDDE8D1EE10B3E00DF515B /* app */ = {isa = PBXFileReference; lastKnownFileType = folder; path = app; sourceTree = "<group>"; };
 		A6FDDE8E1EE10B3E00DF515B /* app_packages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = app_packages; sourceTree = "<group>"; };
 		B2053EEE1EEEE6C9003C56F5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		B2053EF01EEEE6F1003C56F5 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B2053EF11EEEE6F1003C56F5 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		B2053EF31EEEE78D003C56F5 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		B2053EF41EEEE78D003C56F5 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +86,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C4E01FB9612E66945E80F16 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				5C4E05E367E74EE3D49C3478 /* AppDelegate.h */,
+				5C4E07A35EE8144807FB0176 /* AppDelegate.m */,
+				5C4E046E8D28E0CB4A93FBA0 /* ConsoleViewController.h */,
+				5C4E068B6B18FC0A3BB95314 /* ConsoleViewController.m */,
+				5C4E085F091DACFCF3B36AE7 /* Ultils.h */,
+				5C4E0A5CE8241E6D2AE122AD /* Ultils.m */,
+				5C4E01AA578191E2D69F5587 /* ViewController.h */,
+				5C4E06E93788EB5703648767 /* ViewController.m */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
 		60796ED919190F4100A9926B = {
 			isa = PBXGroup;
 			children = (
@@ -120,10 +141,7 @@
 				60796EF719190F4100A9926B /* Images.xcassets */,
 				60796EEC19190F4100A9926B /* Supporting Files */,
 				B2053EEE1EEEE6C9003C56F5 /* Main.storyboard */,
-				B2053EF01EEEE6F1003C56F5 /* ViewController.h */,
-				B2053EF11EEEE6F1003C56F5 /* ViewController.m */,
-				B2053EF31EEEE78D003C56F5 /* AppDelegate.h */,
-				B2053EF41EEEE78D003C56F5 /* AppDelegate.m */,
+				5C4E01FB9612E66945E80F16 /* Class */,
 			);
 			name = HelloPython;
 			path = ../src/HelloPython;
@@ -239,9 +257,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2053EF21EEEE6F1003C56F5 /* ViewController.m in Sources */,
 				60796EF219190F4100A9926B /* main.m in Sources */,
-				B2053EF51EEEE78D003C56F5 /* AppDelegate.m in Sources */,
+				5C4E087E49F6943F1F579CCA /* ConsoleViewController.m in Sources */,
+				5C4E091D0FDEE69A1055A497 /* ViewController.m in Sources */,
+				5C4E060EF0BB2F4A9B6368FB /* AppDelegate.m in Sources */,
+				5C4E05F22ACEA0FB00008DBF /* Ultils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
