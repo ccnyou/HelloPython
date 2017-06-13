@@ -7,10 +7,13 @@
 //
 
 #import "AppDelegate.h"
+#import <PythoniOS/PythoniOS.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    PythonEnvironment *env = [PythonEnvironment env];
+    [env initialize];
     return YES;
 }
 

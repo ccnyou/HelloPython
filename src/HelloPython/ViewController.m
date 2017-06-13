@@ -18,8 +18,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    PythonEnvironment *env = [PythonEnvironment env];
-    [env initialize];
 }
 
 - (void)didReceiveMemoryWarning {
