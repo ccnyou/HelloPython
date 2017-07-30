@@ -28,9 +28,17 @@
 }
 
 - (IBAction)executePython:(id)sender {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"app/hello"
-                                    ofType:@"py"];
+    static const char *setCwdScrppt = "import os\n"
+    "os.chdir(\"%@\")";
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docPath = [paths firstObject];
+    NSLog(@"%s %d doc path = %@", __FUNCTION__, __LINE__, docPath);
+    NSString *command = [NSString stringWithFormat:@(setCwdScrppt), docPath];
+    NSLog(@"%s %d cmd = %@", __FUNCTION__, __LINE__, command);
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"app/hello" ofType:@"py"];
     PythonEnvironment *env = [PythonEnvironment env];
+    [env executePythonScript:command];
     [env executePythonFile:path];
 }
 

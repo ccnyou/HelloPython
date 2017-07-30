@@ -65,7 +65,8 @@
 }
 
 - (int)executePythonScript:(NSString *)script {
-    return 0;
+    int code = PyRun_SimpleString([script UTF8String]);
+    return code;
 }
 
 - (int)executePythonFile:(NSString *)filePath {

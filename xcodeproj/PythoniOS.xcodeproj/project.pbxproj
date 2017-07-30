@@ -194,7 +194,6 @@
 		B2DEF0771EEF03C60019CF27 /* Python.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2DEEFAE1EEF03C60019CF27 /* Python.a */; };
 		B2DEF0781EEF03C60019CF27 /* base.h in Headers */ = {isa = PBXBuildFile; fileRef = B2DEEFB21EEF03C60019CF27 /* base.h */; };
 		B2DEF0791EEF03C60019CF27 /* bcj.h in Headers */ = {isa = PBXBuildFile; fileRef = B2DEEFB31EEF03C60019CF27 /* bcj.h */; };
-		B2DEF07A1EEF03C60019CF27 /* block.h in Headers */ = {isa = PBXBuildFile; fileRef = B2DEEFB41EEF03C60019CF27 /* block.h */; };
 		B2DEF07B1EEF03C60019CF27 /* check.h in Headers */ = {isa = PBXBuildFile; fileRef = B2DEEFB51EEF03C60019CF27 /* check.h */; };
 		B2DEF07C1EEF03C60019CF27 /* container.h in Headers */ = {isa = PBXBuildFile; fileRef = B2DEEFB61EEF03C60019CF27 /* container.h */; };
 		B2DEF07D1EEF03C60019CF27 /* delta.h in Headers */ = {isa = PBXBuildFile; fileRef = B2DEEFB71EEF03C60019CF27 /* delta.h */; };
@@ -779,7 +778,6 @@
 			files = (
 				B2DEF08B1EEF04010019CF27 /* PythonEnvironment.h in Headers */,
 				B2DEF0861EEF03C60019CF27 /* lzma.h in Headers */,
-				B2DEF07A1EEF03C60019CF27 /* block.h in Headers */,
 				B2DEF0121EEF03C60019CF27 /* asdl.h in Headers */,
 				B2DEF0681EEF03C60019CF27 /* rangeobject.h in Headers */,
 				B2DEEFF81EEF03C60019CF27 /* rc4.h in Headers */,
