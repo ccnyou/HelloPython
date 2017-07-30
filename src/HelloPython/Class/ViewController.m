@@ -10,7 +10,8 @@
 #import <PythoniOS/PythoniOS.h>
 
 @interface ViewController ()
-
+@property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (nonatomic, strong) PythonEnvironment *env;
 @end
 
 @implementation ViewController
@@ -18,8 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    PythonEnvironment *env = [PythonEnvironment env];
-    [env initialize];
+    self.env = [PythonEnvironment env];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,6 +40,13 @@
     PythonEnvironment *env = [PythonEnvironment env];
     [env executePythonScript:command];
     [env executePythonFile:path];
+}
+
+- (IBAction)onSaveTouched:(id)sender {
+}
+
+- (IBAction)onExecuteTouched:(id)sender {
+    [self.env executePythonScript:self.textView.text];
 }
 
 @end
