@@ -120,13 +120,13 @@
 		60796EE419190F4100A9926B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B2F78BE51F2E2FD70047B574 /* PythoniOS.framework */,
-				6023B23C1C27D20F006F2562 /* libsqlite3.tbd */,
-				6023B23E1C27D218006F2562 /* libz.tbd */,
 				60796F38191CDBBA00A9926B /* CoreFoundation.framework */,
 				60796EE719190F4100A9926B /* CoreGraphics.framework */,
 				60796EE519190F4100A9926B /* Foundation.framework */,
+				B2F78BE51F2E2FD70047B574 /* PythoniOS.framework */,
 				60796EE919190F4100A9926B /* UIKit.framework */,
+				6023B23C1C27D20F006F2562 /* libsqlite3.tbd */,
+				6023B23E1C27D218006F2562 /* libz.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

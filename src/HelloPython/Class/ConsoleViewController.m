@@ -31,4 +31,9 @@
     self.textView.text = ReadConsole();
 }
 
+- (IBAction)onClearTouched:(id)sender {
+    ClearConsole();
+    self.textView.text = @"";
+}
+
 @end

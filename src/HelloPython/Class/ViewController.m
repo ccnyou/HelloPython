@@ -26,14 +26,21 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.env executePythonScript:@"sys.stdout = open(\"console.txt\", \"w\")"];
+    [self.env executePythonScript:@"sys.stdout = open(\"console.txt\", \"a\")"];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
-    [self.env executePythonScript:@"sys.stdout.close()"];
+    [self _saveConsole];
 }
+
+- (void)_saveConsole {
+    [self.env executePythonScript:@"sys.stdout.close()"];
+    [self.env executePythonScript:@"sys.stdout = open(\"console.txt\", \"a\")"];
+}
+
+#pragma mark - Action
 
 - (IBAction)executePython:(id)sender {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"app/hello" ofType:@"py"];
@@ -42,8 +49,7 @@
 }
 
 - (IBAction)onSaveTouched:(id)sender {
-    [self.env executePythonScript:@"sys.stdout.close()"];
-    [self.env executePythonScript:@"sys.stdout = open(\"console.txt\", \"a\")"];
+    
 }
 
 - (IBAction)onExecuteTouched:(id)sender {

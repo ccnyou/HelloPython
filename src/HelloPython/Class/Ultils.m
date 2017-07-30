@@ -36,23 +36,25 @@ BOOL IsDebuggerAttached() {
     return debuggerIsAttached;
 }
 
-void ReopenStdout() {
+NSString *GetConsolePath() {
     NSURL *appUrl = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory
                                                             inDomains:NSUserDomainMask] lastObject];
     NSString *logPath = [[appUrl path] stringByAppendingPathComponent:@(kConsoleFileName)];
-    const char *szLogPath = logPath.UTF8String;
-    remove(szLogPath);
-    freopen(szLogPath, "ab+", stdout);
-    freopen(szLogPath, "ab+", stderr);
+    return logPath;
 }
 
 NSString *ReadConsole() {
-    NSURL *appUrl = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory
-                                                            inDomains:NSUserDomainMask] lastObject];
-    NSString *logPath = [[appUrl path] stringByAppendingPathComponent:@(kConsoleFileName)];
+    NSString *logPath = GetConsolePath();
     NSString *content = [[NSString alloc] initWithContentsOfFile:logPath
                                                         encoding:NSUTF8StringEncoding
                                                            error:nil];
     return content;
 }
 
+void ClearConsole() {
+    NSString *path = GetConsolePath();
+    FILE * fp = fopen([path UTF8String], "w");
+    if(fp) {
+        fclose(fp);
+    }
+}

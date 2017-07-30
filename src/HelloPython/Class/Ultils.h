@@ -7,6 +7,6 @@
 
 BOOL IsDebuggerAttached();
 
-void ReopenStdout();
-
 NSString *ReadConsole();
+
+void ClearConsole();
