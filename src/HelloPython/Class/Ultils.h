@@ -10,3 +10,5 @@ BOOL IsDebuggerAttached();
 NSString *ReadConsole();
 
 void ClearConsole();
+
+NSString *GetConsolePath();

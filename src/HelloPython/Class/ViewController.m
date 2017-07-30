@@ -26,7 +26,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.env executePythonScript:@"sys.stdout = open(\"console.txt\", \"a\")"];
+    
+    NSString *consolePath = GetConsolePath();
+    NSString *script = [NSString stringWithFormat:@"sys.stdout = open(\"%@\", \"a\")", consolePath];
+    [self.env executePythonScript:script];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -36,8 +39,10 @@
 }
 
 - (void)_saveConsole {
+    NSString *consolePath = GetConsolePath();
+    NSString *script = [NSString stringWithFormat:@"sys.stdout = open(\"%@\", \"a\")", consolePath];
     [self.env executePythonScript:@"sys.stdout.close()"];
-    [self.env executePythonScript:@"sys.stdout = open(\"console.txt\", \"a\")"];
+    [self.env executePythonScript:script];
 }
 
 #pragma mark - Action
