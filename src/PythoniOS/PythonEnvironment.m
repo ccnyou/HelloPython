@@ -56,6 +56,15 @@
     // If other modules are using threads, we need to initialize them.
     PyEval_InitThreads();
     
+    // init cwd
+    static const char *setCwdScrppt = "import os\n"
+    "os.chdir(\"%@\")";
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docPath = [paths firstObject];
+    NSString *command = [NSString stringWithFormat:@(setCwdScrppt), docPath];
+    [self executePythonScript:command];
+    NSLog(@"%s %d cwd = %@", __FUNCTION__, __LINE__, docPath);
+    
     return YES;
 }
 

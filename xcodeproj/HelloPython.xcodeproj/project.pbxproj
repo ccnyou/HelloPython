@@ -20,11 +20,10 @@
 		60796EF219190F4100A9926B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 60796EF119190F4100A9926B /* main.m */; };
 		60796EF819190F4100A9926B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60796EF719190F4100A9926B /* Images.xcassets */; };
 		60796F39191CDBBA00A9926B /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60796F38191CDBBA00A9926B /* CoreFoundation.framework */; };
-		A6886BAC1EEFC6DC0069C1EB /* PythoniOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6886BAB1EEFC6DC0069C1EB /* PythoniOS.framework */; };
 		A6FDDE8F1EE10B3E00DF515B /* app in Resources */ = {isa = PBXBuildFile; fileRef = A6FDDE8D1EE10B3E00DF515B /* app */; };
 		A6FDDE901EE10B3F00DF515B /* app_packages in Resources */ = {isa = PBXBuildFile; fileRef = A6FDDE8E1EE10B3E00DF515B /* app_packages */; };
 		B2053EEF1EEEE6C9003C56F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2053EEE1EEEE6C9003C56F5 /* Main.storyboard */; };
-		B2F78BE41F2DF04A0047B574 /* PythoniOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F78BE31F2DF04A0047B574 /* PythoniOS.framework */; };
+		B2F78BE61F2E2FD70047B574 /* PythoniOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B2F78BE51F2E2FD70047B574 /* PythoniOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +33,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				B2F78BE61F2E2FD70047B574 /* PythoniOS.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -61,11 +61,10 @@
 		60796EF319190F4100A9926B /* HelloPython-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HelloPython-Prefix.pch"; sourceTree = "<group>"; };
 		60796EF719190F4100A9926B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		60796F38191CDBBA00A9926B /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
-		A6886BAB1EEFC6DC0069C1EB /* PythoniOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PythoniOS.framework; path = "../../../../Library/Developer/Xcode/DerivedData/PythoniOS-gbxmtxdjtxixuzfchdjzsisvusxw/Build/Products/Debug-iphoneos/PythoniOS.framework"; sourceTree = "<group>"; };
 		A6FDDE8D1EE10B3E00DF515B /* app */ = {isa = PBXFileReference; lastKnownFileType = folder; path = app; sourceTree = "<group>"; };
 		A6FDDE8E1EE10B3E00DF515B /* app_packages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = app_packages; sourceTree = "<group>"; };
 		B2053EEE1EEEE6C9003C56F5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		B2F78BE31F2DF04A0047B574 /* PythoniOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PythoniOS.framework; path = "../../../../Library/Developer/Xcode/DerivedData/PythoniOS-bnumvaapejdwfugzoolymnmnlist/Build/Products/Debug-iphonesimulator/PythoniOS.framework"; sourceTree = "<group>"; };
+		B2F78BE51F2E2FD70047B574 /* PythoniOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PythoniOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,10 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6886BAC1EEFC6DC0069C1EB /* PythoniOS.framework in Frameworks */,
 				6023B23F1C27D218006F2562 /* libz.tbd in Frameworks */,
 				6023B23D1C27D20F006F2562 /* libsqlite3.tbd in Frameworks */,
-				B2F78BE41F2DF04A0047B574 /* PythoniOS.framework in Frameworks */,
 				60796F39191CDBBA00A9926B /* CoreFoundation.framework in Frameworks */,
 				60796EE819190F4100A9926B /* CoreGraphics.framework in Frameworks */,
 				60796EE619190F4100A9926B /* Foundation.framework in Frameworks */,
@@ -123,8 +120,7 @@
 		60796EE419190F4100A9926B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B2F78BE31F2DF04A0047B574 /* PythoniOS.framework */,
-				A6886BAB1EEFC6DC0069C1EB /* PythoniOS.framework */,
+				B2F78BE51F2E2FD70047B574 /* PythoniOS.framework */,
 				6023B23C1C27D20F006F2562 /* libsqlite3.tbd */,
 				6023B23E1C27D218006F2562 /* libz.tbd */,
 				60796F38191CDBBA00A9926B /* CoreFoundation.framework */,

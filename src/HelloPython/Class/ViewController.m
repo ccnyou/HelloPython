@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <PythoniOS/PythoniOS.h>
+#import "Ultils.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *textView;
@@ -20,29 +21,29 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.env = [PythonEnvironment env];
+    [self.env executePythonScript:@"import sys"];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.env executePythonScript:@"sys.stdout = open(\"console.txt\", \"w\")"];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    [self.env executePythonScript:@"sys.stdout.close()"];
 }
 
 - (IBAction)executePython:(id)sender {
-    static const char *setCwdScrppt = "import os\n"
-    "os.chdir(\"%@\")";
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *docPath = [paths firstObject];
-    NSLog(@"%s %d doc path = %@", __FUNCTION__, __LINE__, docPath);
-    NSString *command = [NSString stringWithFormat:@(setCwdScrppt), docPath];
-    NSLog(@"%s %d cmd = %@", __FUNCTION__, __LINE__, command);
-    
     NSString *path = [[NSBundle mainBundle] pathForResource:@"app/hello" ofType:@"py"];
     PythonEnvironment *env = [PythonEnvironment env];
-    [env executePythonScript:command];
     [env executePythonFile:path];
 }
 
 - (IBAction)onSaveTouched:(id)sender {
+    [self.env executePythonScript:@"sys.stdout.close()"];
+    [self.env executePythonScript:@"sys.stdout = open(\"console.txt\", \"a\")"];
 }
 
 - (IBAction)onExecuteTouched:(id)sender {

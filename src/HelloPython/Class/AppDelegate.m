@@ -13,10 +13,6 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    //if (!IsDebuggerAttached()) {
-    //    ReopenStdout();
-    //}
-
     PythonEnvironment *env = [PythonEnvironment env];
     [env initialize];
 
