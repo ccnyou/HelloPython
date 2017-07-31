@@ -91,6 +91,7 @@ def craw_page(url, seed_file_path, title_file_path):
     seed_title += "\n".encode("utf-8")
     with open(seed_file_path, "ab+") as f:
         f.write(seed_link)
+        print(seed_link.decode("utf-8"))
     with open(title_file_path, "ab+") as f:
         f.write(seed_title)
 
@@ -122,9 +123,9 @@ def main():
     count = len(nodes)
     if count <= 0:
         return
-    print("%d topic found" % count)
+    # print("%d topic found" % count)
     for i, node in enumerate(nodes):
-        print("crawling %d topic" % (i + 1))
+        # print("crawling %d topic" % (i + 1))
         href = node.get("href")
         page_url = config.base_url + href
         craw_page(page_url, config.seed_file_path, config.title_file_path)

@@ -23,11 +23,6 @@
     self.env = [PythonEnvironment env];
     [self.env executePythonScript:@"import sys"];
     ClearConsole();
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
     [self _reopenConsole];
 }
 
@@ -38,12 +33,7 @@
 }
 
 - (void)_saveConsole {
-    const char *code = "sys.stdout = open(\"%@\", \"a\")\n"
-    "sys.stderr = sys.stdout";
-    NSString *consolePath = GetConsolePath();
-    NSString *script = [NSString stringWithFormat:@(code), consolePath];
-    [self.env executePythonScript:@"sys.stdout.close()"];
-    [self.env executePythonScript:script];
+    [self.env executePythonScript:@"sys.stdout.flush()"];
 }
 
 - (void)_reopenConsole {
