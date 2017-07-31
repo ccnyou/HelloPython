@@ -22,14 +22,13 @@
     // Do any additional setup after loading the view.
     self.env = [PythonEnvironment env];
     [self.env executePythonScript:@"import sys"];
+    ClearConsole();
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    NSString *consolePath = GetConsolePath();
-    NSString *script = [NSString stringWithFormat:@"sys.stdout = open(\"%@\", \"a\")", consolePath];
-    [self.env executePythonScript:script];
+    [self _reopenConsole];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -39,9 +38,19 @@
 }
 
 - (void)_saveConsole {
+    const char *code = "sys.stdout = open(\"%@\", \"a\")\n"
+    "sys.stderr = sys.stdout";
     NSString *consolePath = GetConsolePath();
-    NSString *script = [NSString stringWithFormat:@"sys.stdout = open(\"%@\", \"a\")", consolePath];
+    NSString *script = [NSString stringWithFormat:@(code), consolePath];
     [self.env executePythonScript:@"sys.stdout.close()"];
+    [self.env executePythonScript:script];
+}
+
+- (void)_reopenConsole {
+    const char *code = "sys.stdout = open(\"%@\", \"a\")\n"
+    "sys.stderr = sys.stdout";
+    NSString *consolePath = GetConsolePath();
+    NSString *script = [NSString stringWithFormat:@(code), consolePath];
     [self.env executePythonScript:script];
 }
 
@@ -58,7 +67,13 @@
 }
 
 - (IBAction)onExecuteTouched:(id)sender {
-    [self.env executePythonScript:self.textView.text];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"app/seed_crawler" ofType:@"py"];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.env executePythonFile:path];
+        });
+    });
+    self.textView.text = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
 }
 
 @end

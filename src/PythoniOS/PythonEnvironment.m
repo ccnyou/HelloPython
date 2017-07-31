@@ -42,7 +42,7 @@
     Py_SetPythonHome(_python_home);
 
     // Set the PYTHONPATH
-    python_path = [NSString stringWithFormat:@"PYTHONPATH=%@/app:%@/app_packages", resourcePath, resourcePath];
+    python_path = [NSString stringWithFormat:@"PYTHONPATH=%@/app:%@/app_packages:%@/site_packages", resourcePath, resourcePath, resourcePath];
     //NSLog(@"PYTHONPATH is: %@", python_path);
     putenv((char *)[python_path UTF8String]);
 
@@ -52,7 +52,11 @@
 
     //NSLog(@"Initializing Python runtime");
     Py_Initialize();
-
+    
+    // set argv
+    wchar_t *argv[] = {L"PythoniOS"};
+    PySys_SetArgv(1, argv);
+    
     // If other modules are using threads, we need to initialize them.
     PyEval_InitThreads();
     
